@@ -11,7 +11,7 @@ const Header: React.FC = () => {
     <header className="bg-gray-800 text-white py-4 px-6 shadow-md sticky top-0 z-10">
       <div className="container mx-auto flex justify-between items-center">
       <motion.h1
-            className="text-3xl font-semibold tracking-tight"
+            className="text-5xl font-semibold tracking-tight"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}

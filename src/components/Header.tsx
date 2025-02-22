@@ -1,68 +1,44 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
-const Header: React.FC = () => {
-  const linkVariants = {
-    hover: { scale: 1.1, color: "#D1D5DB" }, // Светло-серый при наведении
-    tap: { scale: 0.95 }, // Легкое сжатие при клике
-  };
-
-  return (
-    <header className="bg-gray-800 text-white py-4 px-6 shadow-md sticky top-0 z-10">
-      <div className="container mx-auto flex justify-between items-center">
+const Header: React.FC = () => (
+  <header className="bg-gray-800 text-white p-4 shadow-md">
+          <div className="container mx-auto flex justify-between items-center">
       <motion.h1
-            className="text-3xl font-semibold tracking-tight"
+            className="text-5xl font-semibold tracking-tight"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
         >
             Амур Полистирол Бетон
         </motion.h1>
-        <nav className="space-x-6">
-          <motion.a
-            href="#home"
-            className="text-sm text-white"
-            variants={linkVariants}
-            whileHover="hover"
-            whileTap="tap"
-            transition={{ duration: 0.2 }}
-          >
+        </div>
+    <nav className="container mx-auto">
+      <ul className="flex space-x-6 justify-left">
+        <li>
+          <Link to="/" className="hover:text-blue-300 transition-colors">
             Главная
-          </motion.a>
-          <motion.a
-            href="#about"
-            className="text-sm text-white"
-            variants={linkVariants}
-            whileHover="hover"
-            whileTap="tap"
-            transition={{ duration: 0.2 }}
-          >
-            О компании
-          </motion.a>
-          <motion.a
-            href="#products"
-            className="text-sm text-white"
-            variants={linkVariants}
-            whileHover="hover"
-            whileTap="tap"
-            transition={{ duration: 0.2 }}
-          >
+          </Link>
+        </li>
+        <li>
+          <Link to="/products" className="hover:text-blue-300 transition-colors">
             Продукция
-          </motion.a>
-          <motion.a
-            href="#contacts"
-            className="text-sm text-white"
-            variants={linkVariants}
-            whileHover="hover"
-            whileTap="tap"
-            transition={{ duration: 0.2 }}
-          >
+          </Link>
+        </li>
+        <li>
+          <Link to="/about" className="hover:text-blue-300 transition-colors">
+            О нас
+          </Link>
+        </li>
+        <li>
+          <Link to="/contacts" className="hover:text-blue-300 transition-colors">
             Контакты
-          </motion.a>
-        </nav>
-      </div>
-    </header>
-  );
-};
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  </header>
+);
 
 export default Header;

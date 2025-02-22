@@ -10,15 +10,15 @@ import { motion } from "framer-motion";
 
 const App: React.FC = () => (
   <motion.h1
-  className="text-2xl font-semibold tracking-tight"
+  className="text-1xl font-semibold tracking-tight"
   initial={{ opacity: 0, x: -50 }}
-  animate={{ opacity: 1, x: 0 }}
+  animate={{ opacity: 2, x: 0 }}
   transition={{ duration: 0.5 }}
 >
   <Router>
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen right">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-shrink">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />

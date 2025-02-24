@@ -38,7 +38,7 @@ const Home: React.FC = () => {
               Связаться с нами
             </Link>
           </div>
-          <div className='flex justify-mid'>
+          <div className=''>
             <WorkDays/>
           </div>
         </div>

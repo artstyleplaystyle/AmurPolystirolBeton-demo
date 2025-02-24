@@ -1,38 +1,37 @@
 import React, { useState } from 'react';
 
+interface Product {
+  title: string;
+  pricePerBlock: number;
+  blocksPerCubicMeter: number;
+  pricePerCubicMeter: number;
+  blocksPerPallet: number;
+  palletVolume: number;
+  palletPrice: number;
+}
+
+const products: Product[] = [
+  {
+    title: 'Блоки 200×300×600 мм',
+    pricePerBlock: 310,
+    blocksPerCubicMeter: 27.77,
+    pricePerCubicMeter: 8500,
+    blocksPerPallet: 32,
+    palletVolume: 1.152,
+    palletPrice: 9920,
+  },
+  {
+    title: 'Блоки 400×300×600 мм',
+    pricePerBlock: 620,
+    blocksPerCubicMeter: 13.88,
+    pricePerCubicMeter: 8605.6,
+    blocksPerPallet: 20,
+    palletVolume: 1.44,
+    palletPrice: 12400,
+  },
+];
+
 const CostCalculator: React.FC = () => {
-
-  interface Product {
-    title: string;
-    pricePerBlock: number;
-    blocksPerCubicMeter: number;
-    pricePerCubicMeter: number;
-    blocksPerPallet: number;
-    palletVolume: number;
-    palletPrice: number;
-  }
-  
-  const products: Product[] = [
-    {
-      title: 'Блоки 200×300×600 мм',
-      pricePerBlock: 310,
-      blocksPerCubicMeter: 27.77,
-      pricePerCubicMeter: 8500,
-      blocksPerPallet: 32,
-      palletVolume: 1.152,
-      palletPrice: 9920,
-    },
-    {
-      title: 'Блоки 400×300×600 мм',
-      pricePerBlock: 620,
-      blocksPerCubicMeter: 13.88,
-      pricePerCubicMeter: 8605.6,
-      blocksPerPallet: 20,
-      palletVolume: 1.44,
-      palletPrice: 12400,
-    },
-  ];
-
   const [selectedProduct, setSelectedProduct] = useState(products[0].title);
   const [unit, setUnit] = useState<'blocks' | 'pallets'>('blocks');
   const [quantity, setQuantity] = useState<string>('');
@@ -77,15 +76,17 @@ const CostCalculator: React.FC = () => {
   };
 
   return (
-    <div className="p-15 bg-gray-50 rounded-3xl shadow-md ">
-      <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">Калькулятор стоимости</h3>
+    <div className="p-4 sm:p-6 bg-gray-50 rounded-lg shadow-md">
+      <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4 text-center">
+        Калькулятор стоимости
+      </h3>
       <div className="space-y-4">
         <div>
-          <label className="block text-gray-700 mb-2">Тип блока:</label>
+          <label className="block text-gray-700 text-sm sm:text-base mb-2">Тип блока:</label>
           <select
             value={selectedProduct}
             onChange={e => setSelectedProduct(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             {products.map(product => (
               <option key={product.title} value={product.title}>
@@ -95,18 +96,18 @@ const CostCalculator: React.FC = () => {
           </select>
         </div>
         <div>
-          <label className="block text-gray-700 mb-2">Единица:</label>
+          <label className="block text-gray-700 text-sm sm:text-base mb-2">Единица:</label>
           <select
             value={unit}
             onChange={e => setUnit(e.target.value as 'blocks' | 'pallets')}
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="blocks">Блоки (шт)</option>
             <option value="pallets">Поддоны (шт)</option>
           </select>
         </div>
         <div>
-          <label className="block text-gray-700 mb-2">
+          <label className="block text-gray-700 text-sm sm:text-base mb-2">
             Количество ({unit === 'blocks' ? 'блоков' : 'поддонов'}):
           </label>
           <input
@@ -114,16 +115,16 @@ const CostCalculator: React.FC = () => {
             value={quantity}
             onChange={e => setQuantity(e.target.value)}
             placeholder={`Введите количество ${unit === 'blocks' ? 'блоков' : 'поддонов'}`}
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <button
           onClick={calculateCost}
-          className="w-full bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-blue-900 transition-colors"
+          className="w-full bg-gray-800 text-white py-3 px-4 rounded-md text-base hover:bg-blue-900 transition-colors"
         >
           Рассчитать
         </button>
-        {result && <p className="text-gray-600 mt-4 text-center">{result}</p>}
+        {result && <p className="text-gray-600 mt-4 text-center text-sm sm:text-base">{result}</p>}
       </div>
     </div>
   );

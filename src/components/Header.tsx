@@ -29,7 +29,7 @@ const Header: React.FC = () => {
         </div>
         {/* Заголовок для десктопов */}
         <motion.h1
-          className="hidden md:block text-xl md:text-2xl font-semibold tracking-tight"
+          className="hidden md:block text-xl md:text-4xl font-semibold tracking-tight"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}

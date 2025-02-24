@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import WorkSchedule from '../components/WorkSchedule';
 
 const Home: React.FC = () => {
   return (
@@ -35,6 +36,7 @@ const Home: React.FC = () => {
           >
             Связаться с нами
           </Link>
+          <WorkSchedule />
         </div>
       </div>
     </section>

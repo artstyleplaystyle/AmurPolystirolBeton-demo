@@ -8,16 +8,16 @@ const Home: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="flex flex-col items-center text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="md:text-xl font-bold text-gray-800 mb-4">
               Производство полистиролбетона
             </h2>
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6">
               Надёжные и экологичные строительные решения для вашего бизнеса и дома
             </p>
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+            <h3 className="text-xl md:text-xl font-bold text-gray-800 mb-4">
               УВАЖАЕМЫЕ ПОКУПАТЕЛИ!
             </h3>
-            <div className="text-lg text-gray-600 max-w-2xl space-y-4">
+            <div className="text-gray-600 max-w-2xl space-y-4">
               <p className="indent-6">
                 В 2025 году планируется увеличение стоимости всей нашей продукции.
               </p>
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
               Связаться с нами
             </Link>
           </div>
-          <div className=''>
+          <div className='flex justify-mid'>
             <WorkDays/>
           </div>
         </div>

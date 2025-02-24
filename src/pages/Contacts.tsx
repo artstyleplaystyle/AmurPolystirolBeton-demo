@@ -60,7 +60,7 @@ const Contacts: React.FC = () => {
           transition={{ duration: 0.5 }}
           >
       {/* Виджет дней недели */}
-      <div className="mt-8 text-xl max-w-md mx-auto">
+      <div className="max-w-[768px] min-w-[320px] mx-auto px-4">
         <h3 className="text-3xl font-semibold text-gray-800 mb-4 text-center">
           Режим работы
         </h3>

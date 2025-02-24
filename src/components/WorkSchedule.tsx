@@ -1,4 +1,3 @@
-import React from 'react';
 import { daysOfWeek, Day } from '../data/workSchedule';
 
 interface WorkScheduleProps {

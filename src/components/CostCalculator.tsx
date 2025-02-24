@@ -1,5 +1,5 @@
-import React, { useReducer } from 'react';
-import { Product, products } from '../data/products';
+import { useReducer } from 'react';
+import { products } from '../data/products';
 
 type State = {
   selectedProduct: string;

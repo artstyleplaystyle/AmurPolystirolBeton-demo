@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import WorkSchedule from '../components/WorkSchedule';
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <section id="home" className="bg-white py-12 border-b border-gray-200">
       <div className="max-w-[768px] min-w-[320px] mx-auto px-4">

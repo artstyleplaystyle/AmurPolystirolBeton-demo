@@ -1,18 +1,17 @@
 import React from 'react';
+import { daysOfWeek, Day } from '../data/workSchedule';
 
-const WorkSchedule: React.FC = () => {
-  const daysOfWeek = [
-    { name: 'Пн', isWorkDay: true },
-    { name: 'Вт', isWorkDay: true },
-    { name: 'Ср', isWorkDay: true },
-    { name: 'Чт', isWorkDay: true },
-    { name: 'Пт', isWorkDay: true },
-    { name: 'Сб', isWorkDay: false },
-    { name: 'Вс', isWorkDay: false },
-  ];
+interface WorkScheduleProps {
+  date?: Date; // Опциональная дата для текущего дня
+}
 
-  const today = new Date('2025-02-23').getDay();
-  const currentDayIndex = today === 0 ? 6 : today - 1;
+const getCurrentDayIndex = (date: Date) => {
+  const day = date.getDay();
+  return day === 0 ? 6 : day - 1;
+};
+
+const WorkSchedule = ({ date = new Date('2025-02-23') }: WorkScheduleProps) => {
+  const currentDayIndex = getCurrentDayIndex(date);
 
   return (
     <div className="mt-8 max-w-md mx-auto">
@@ -20,7 +19,7 @@ const WorkSchedule: React.FC = () => {
         Режим работы
       </h3>
       <div className="flex flex-wrap justify-center gap-1 sm:gap-2 bg-gray-100 p-3 rounded-lg shadow-md">
-        {daysOfWeek.map((day, index) => (
+        {daysOfWeek.map((day: Day, index: number) => (
           <div
             key={day.name}
             className={`w-9 sm:w-10 p-2 text-center rounded-md transition-all duration-300 text-xs sm:text-sm ${

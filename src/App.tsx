@@ -1,25 +1,28 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Products from './pages/Products';
-import About from './pages/About';
-import Contacts from './pages/Contacts';
-import Calculator from './pages/Calculator';
 
-const App: React.FC = () => (
+const Home = React.lazy(() => import('./pages/Home'));
+const Products = React.lazy(() => import('./pages/Products'));
+const About = React.lazy(() => import('./pages/About'));
+const Contacts = React.lazy(() => import('./pages/Contacts'));
+const Calculator = React.lazy(() => import('./pages/Calculator'));
+
+const App = () => (
   <Router>
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/calculator" element={<Calculator />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contacts" element={<Contacts />} />
-        </Routes>
+        <Suspense fallback={<div className="text-center py-16">Загрузка...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/calculator" element={<Calculator />} />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </div>

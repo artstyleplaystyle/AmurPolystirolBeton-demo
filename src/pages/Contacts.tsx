@@ -2,14 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import WorkSchedule from '../components/WorkSchedule';
 
-const Contacts: React.FC = () => {
+const Contacts = () => {
   return (
     <section className="container mx-auto py-8 px-6">
       <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
         Контакты
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="items-center bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Свяжитесь с нами</h2>
           <div className="text-gray-600 space-y-4">
             <p>

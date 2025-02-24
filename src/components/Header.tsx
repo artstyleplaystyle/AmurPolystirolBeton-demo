@@ -8,26 +8,6 @@ const Header: React.FC = () => {
   return (
     <header className="bg-gray-800 text-white p-4 shadow-md">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        {/* Кнопка гамбургера для мобильных */}
-        <div className="flex justify-between w-full md:hidden">
-          <button
-            className="text-2xl focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? '✕' : '☰'}
-          </button>
-          <motion.h1
-            className="text-xl font-semibold tracking-tight"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Link to="/" className="hover:text-blue-300 transition-colors">
-              Амур Полистирол Бетон
-            </Link>
-          </motion.h1>
-        </div>
-        {/* Заголовок для десктопов */}
         <motion.h1
           className="hidden md:block  md:text-2xl font-semibold tracking-tight"
           initial={{ opacity: 0, x: -50 }}

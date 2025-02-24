@@ -45,6 +45,10 @@ const CostCalculator: React.FC = () => {
     }
 
     const numQuantity = Number(quantity);
+    if (numQuantity < 0) {
+      setResult('Количество не может быть отрицательным.');
+      return;
+    }
 
     if (unit === 'blocks') {
       const totalBlocks = numQuantity;

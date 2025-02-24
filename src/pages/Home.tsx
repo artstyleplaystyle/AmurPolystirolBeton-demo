@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CostCalculator from '../components/CostCalculator';
-import { motion } from 'framer-motion';
 
 const Home: React.FC = () => {
   return (
     <section id="home" className="bg-white py-16 border-b border-gray-200">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* Текст и кнопка слева */}
           <div className="flex flex-col items-center text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               Производство полистиролбетона
@@ -33,21 +31,13 @@ const Home: React.FC = () => {
                 Если у вас возникнут вопросы о причинах изменения цен или вы захотите уточнить детали, свяжитесь с нами — мы подробно проконсультируем вас и ответим на все вопросы!
               </p>
             </div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-6"
+            <Link
+              to="/contacts"
+              className="mt-6 bg-gray-800 text-white py-2 px-6 text-sm font-semibold rounded-md hover:bg-blue-900 transition-colors"
             >
-              <Link
-                to="/contacts"
-                className="mt-6 bg-gray-800 text-white py-2 px-6 text-sm font-semibold rounded-md hover:bg-blue-900 transition-colors"
-              >
-                Связаться с нами
-              </Link>
-            </motion.div>
+              Связаться с нами
+            </Link>
           </div>
-          {/* Калькулятор справа */}
           <div className="md:max-w-sm mx-auto">
             <CostCalculator />
           </div>

@@ -15,19 +15,34 @@ const Header: React.FC = () => (
           Амур Полистирол Бетон
         </Link>
       </motion.h1>
-      
       <nav>
-      <motion.ul
-        className="flex space-x-6"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <li><Link to="/" className="hover:text-blue-300 transition-colors">Главная</Link></li>
-          <li><Link to="/products" className="hover:text-blue-300 transition-colors">Продукция</Link></li>
-          <li><Link to="/about" className="hover:text-blue-300 transition-colors">О нас</Link></li>
-          <li><Link to="/contacts" className="hover:text-blue-300 transition-colors">Контакты</Link></li>
-        </motion.ul>
+        <ul className="flex space-x-6">
+          <li>
+            <Link to="/" className="hover:text-blue-300 transition-colors">
+              Главная
+            </Link>
+          </li>
+          <li>
+            <Link to="/products" className="hover:text-blue-300 transition-colors">
+              Продукция
+            </Link>
+          </li>          
+          <li>
+            <Link to="/calculator" className="hover:text-blue-300 transition-colors">
+              Калькулятор
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="hover:text-blue-300 transition-colors">
+              О нас
+            </Link>
+          </li>
+          <li>
+            <Link to="/contacts" className="hover:text-blue-300 transition-colors">
+              Контакты
+            </Link>
+          </li>
+        </ul>
       </nav>
     </div>
   </header>

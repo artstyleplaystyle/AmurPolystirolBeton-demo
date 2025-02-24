@@ -27,18 +27,21 @@ const Contacts: React.FC = () => {
           <div className="text-gray-600 space-y-4">
             <p>
               <span className="font-medium">Телефон:</span>{' '}
-              <a href="tel:+71234567890" className="text-blue-600 hover:underline">
-                +7 (123) 456-78-90
+              <a href="tel:+79622855151" className="text-black-600 hover:underline">
+                +7 (962) 285-51-51 ||
+              </a>
+              <a href="tel:+74162555151" className="text-black-600 hover:underline">
+                +7 (416) 255-51-51
               </a>
             </p>
             <p>
               <span className="font-medium">Email:</span>{' '}
-              <a href="mailto:info@amurpolystirol.ru" className="text-blue-600 hover:underline">
-                info@amurpolystirol.ru
+              <a href="mailto:amurpsbeton@mail.ru" className="text-blue-600 hover:underline">
+                amurpsbeton@mail.ru
               </a>
             </p>
             <p>
-              <span className="font-medium">Адрес:</span> г. Благовещенск, ул. Ленина, 1
+              <span className="font-medium">Адрес:</span> г. Благовещенск, Пограничная ул., 128
             </p>
           </div>
         </div>
@@ -61,7 +64,7 @@ const Contacts: React.FC = () => {
         <h3 className="text-3xl font-semibold text-gray-800 mb-4 text-center">
           Режим работы
         </h3>
-        <div className="flex justify-between gap-2 bg-gray-100 p-4 rounded-lg shadow-md">
+        <div className="flex justify-between gap-2 bg-gray-100 p-4 rounded-xl shadow-md">
           {daysOfWeek.map((day, index) => (
             <div
               key={day.name}
@@ -69,7 +72,7 @@ const Contacts: React.FC = () => {
                 day.isWorkDay
                   ? 'bg-white-100 text-black-800 hover:bg-blue-300'
                   : 'bg-gray-200 text-red-800 hover:bg-red-300'
-              } ${index === currentDayIndex ? 'ring-2 ring-blue-500 scale-110' : ''}`}
+              } ${index === currentDayIndex ? 'ring-2 ring-black-500 scale-110' : ''}`}
             >
               <span className="font-medium">{day.name}</span>
               <p className="text-xs">{day.hours}</p>

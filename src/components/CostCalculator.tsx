@@ -1,37 +1,38 @@
 import React, { useState } from 'react';
 
-interface Product {
-  title: string;
-  pricePerBlock: number;
-  blocksPerCubicMeter: number;
-  pricePerCubicMeter: number;
-  blocksPerPallet: number;
-  palletVolume: number;
-  palletPrice: number;
-}
-
-const products: Product[] = [
-  {
-    title: 'Блоки 200×300×600 мм',
-    pricePerBlock: 310,
-    blocksPerCubicMeter: 27.77,
-    pricePerCubicMeter: 8500,
-    blocksPerPallet: 32,
-    palletVolume: 1.152,
-    palletPrice: 9920,
-  },
-  {
-    title: 'Блоки 400×300×600 мм',
-    pricePerBlock: 620,
-    blocksPerCubicMeter: 13.88,
-    pricePerCubicMeter: 8605.6,
-    blocksPerPallet: 20,
-    palletVolume: 1.44,
-    palletPrice: 12400,
-  },
-];
-
 const CostCalculator: React.FC = () => {
+
+  interface Product {
+    title: string;
+    pricePerBlock: number;
+    blocksPerCubicMeter: number;
+    pricePerCubicMeter: number;
+    blocksPerPallet: number;
+    palletVolume: number;
+    palletPrice: number;
+  }
+  
+  const products: Product[] = [
+    {
+      title: 'Блоки 200×300×600 мм',
+      pricePerBlock: 310,
+      blocksPerCubicMeter: 27.77,
+      pricePerCubicMeter: 8500,
+      blocksPerPallet: 32,
+      palletVolume: 1.152,
+      palletPrice: 9920,
+    },
+    {
+      title: 'Блоки 400×300×600 мм',
+      pricePerBlock: 620,
+      blocksPerCubicMeter: 13.88,
+      pricePerCubicMeter: 8605.6,
+      blocksPerPallet: 20,
+      palletVolume: 1.44,
+      palletPrice: 12400,
+    },
+  ];
+
   const [selectedProduct, setSelectedProduct] = useState(products[0].title);
   const [unit, setUnit] = useState<'blocks' | 'pallets'>('blocks');
   const [quantity, setQuantity] = useState<string>('');
@@ -76,7 +77,7 @@ const CostCalculator: React.FC = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-50 rounded-lg shadow-md">
+    <div className="p-15 bg-gray-50 rounded-3xl shadow-md ">
       <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">Калькулятор стоимости</h3>
       <div className="space-y-4">
         <div>

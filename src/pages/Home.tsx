@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CostCalculator from '../components/CostCalculator';
+import WorkDays from '../components/WorkDays';
 
 const Home: React.FC = () => {
   return (
@@ -38,8 +38,8 @@ const Home: React.FC = () => {
               Связаться с нами
             </Link>
           </div>
-          <div className="md:max-w-sm mx-auto">
-            <CostCalculator />
+          <div className='flex justify-mid'>
+            <WorkDays/>
           </div>
         </div>
       </div>

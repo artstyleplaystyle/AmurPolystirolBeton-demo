@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Home: React.FC = () => {
   return (
     <section id="home" className="bg-white py-12 border-b border-gray-200">
-      <div className="w-[768px] mx-auto px-4">
+      <div className="max-w-[768px] min-w-[320px] mx-auto px-4">
         <div className="flex flex-col items-center text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             Производство полистиролбетона

@@ -68,16 +68,13 @@ const CostCalculator = () => {
 
   return (
     <div className="p-4 sm:p-6 bg-gray-50 rounded-lg shadow-md">
-      <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4 text-center">
-        Калькулятор стоимости
-      </h3>
       <div className="space-y-4">
         <div>
-          <label className="block text-gray-700 text-sm sm:text-base mb-2">Тип блока:</label>
+          <label className="block text-steel-green-800 text-sm sm:text-base mb-2">Тип блока:</label>
           <select
             value={state.selectedProduct}
             onChange={e => dispatch({ type: 'SET_PRODUCT', payload: e.target.value })}
-            className="w-full p-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-steel-green-200 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-primary"
           >
             {products.map(product => (
               <option key={product.title} value={product.title}>
@@ -87,18 +84,18 @@ const CostCalculator = () => {
           </select>
         </div>
         <div>
-          <label className="block text-gray-700 text-sm sm:text-base mb-2">Единица:</label>
+          <label className="block text-steel-green-800 text-sm sm:text-base mb-2">Единица:</label>
           <select
             value={state.unit}
             onChange={e => dispatch({ type: 'SET_UNIT', payload: e.target.value as 'blocks' | 'pallets' })}
-            className="w-full p-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-steel-green-200 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-primary"
           >
             <option value="blocks">Блоки (шт)</option>
             <option value="pallets">Поддоны (шт)</option>
           </select>
         </div>
         <div>
-          <label className="block text-gray-700 text-sm sm:text-base mb-2">
+          <label className="block text-steel-green-800 text-sm sm:text-base mb-2">
             Количество ({state.unit === 'blocks' ? 'блоков' : 'поддонов'}):
           </label>
           <input
@@ -106,16 +103,16 @@ const CostCalculator = () => {
             value={state.quantity}
             onChange={e => dispatch({ type: 'SET_QUANTITY', payload: e.target.value })}
             placeholder={`Введите количество ${state.unit === 'blocks' ? 'блоков' : 'поддонов'}`}
-            className="w-full p-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-steel-green-200 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
         <button
           onClick={handleCalculate}
-          className="w-full bg-gray-800 text-white py-3 px-4 rounded-md text-base hover:bg-blue-900 transition-colors"
+          className="w-full bg-primary text-white py-3 px-4 rounded-md text-base hover:bg-primary-hover transition-colors"
         >
           Рассчитать
         </button>
-        {state.result && <p className="text-gray-600 mt-4 text-center text-sm sm:text-base">{state.result}</p>}
+        {state.result && <p className="text-steel-green-700 mt-4 text-center text-sm sm:text-base">{state.result}</p>}
       </div>
     </div>
   );

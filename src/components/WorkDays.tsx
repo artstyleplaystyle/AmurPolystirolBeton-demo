@@ -18,32 +18,32 @@ const currentDayIndex = today === 0 ? 6 : today - 1; // Корректировк
 
 return(
 	<motion.div
-	className="flex justify-between gap-2 bg-gray-100 p-4 rounded-xl shadow-md"
+	className="flex justify-between gap-2 bg-steel-green-50 p-4 rounded-xl shadow-md"
 	initial={{ opacity: 0, y: 20 }}
 	animate={{ opacity: 1, y: 0 }}
 	transition={{ duration: 0.5 }}
 	>
 {/* Виджет дней недели */}
 <div className="mt-8 text-xl max-w-md mx-auto">
-	<h3 className="text-4xl font-semibold text-gray-800 mb-4 text-center">
+	<h3 className="text-4xl font-semibold text-secondary mb-4 text-center">
 	Режим работы
 	</h3>
-	<div className="flex justify-between gap-2 bg-gray-100 p-4 rounded-xl shadow-md">
+	<div className="flex justify-between gap-2 bg-steel-green-50 p-4 rounded-xl shadow-md">
 	{daysOfWeek.map((day, index) => (
 		<div
     key={day.name}
     className={`flex-1 p-2 text-center rounded-md transition-all duration-300 ${
       day.isWorkDay
-        ? 'bg-white-100 text-black-800 hover:bg-blue-300'
-        : 'bg-gray-200 text-red-800 hover:bg-red-300'
-    } ${index === currentDayIndex ? 'ring-2 ring-black-500 scale-110' : ''}`}
+        ? 'bg-steel-green-200 text-steel-green-800 hover:bg-steel-green-300'
+        : 'bg-steel-green-100 text-steel-green-700 hover:bg-steel-green-200'
+    } ${index === currentDayIndex ? 'ring-2 ring-primary scale-110' : ''}`}
  		>
     <span className="font-medium">{day.name}</span>
     <p className="text-xs">{day.hours}</p>
   </div>
 		))}
 		</div>
-		<p className="mt-2 text-center text-gray-600">
+		<p className="mt-2 text-center text-steel-green-600">
 		Рабочие дни: Пн-Пт, 9:00–18:00 | Выходные: Сб-Вс
 		</p>
 		</div>

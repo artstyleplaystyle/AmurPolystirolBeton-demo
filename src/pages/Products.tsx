@@ -46,9 +46,10 @@ const Products: React.FC = () => {
             >
               <div className="p-4 bg-neutral-100">
                 <img 
-                  src={index === 0 ? '/images/Блокт6.jpg' : '/images/Блоки5.jpg'}
+                  src={index === 0 ? 'images/Блокт6.jpg' : 'images/Блоки5.jpg'}
                   alt={product.title}
                   className="w-full h-64 object-contain"
+                  loading="lazy"
                 />
               </div>
               
